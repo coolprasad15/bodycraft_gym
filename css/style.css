@@ -69,7 +69,7 @@ nav ul li a.active {
 
 /* General sections */
 section {
-  padding: 60px 20px;
+  padding: 60px 55px;
   text-align: center;
 }
 
@@ -89,8 +89,8 @@ section {
 .schedule,
 .testimonials {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: clamp(10px, 5vw, 40px);
   margin-top: 30px;
 }
 
@@ -153,9 +153,9 @@ section {
 
 /* Footer */
 footer {
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100%; */
   background: #111;
   color: #fff;
   text-align: center;
@@ -199,3 +199,67 @@ header {
   align-items: center;
   padding: 15px 30px;
 }
+
+.card1 {
+  width: 100%;
+  /* height: 250px; */
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  cursor: pointer;
+}
+
+.card1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  transition: transform 0.4s ease; /* smooth zoom */
+}
+
+.card1:hover img {
+  transform: scale(1.1); /* zoom in */
+}
+
+.card1 h3,
+.card1 p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card1 h3 {
+  bottom: 50px;
+  background: rgba(0,0,0,0.6);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.card1 p {
+  bottom: 10px;
+  width: 90%;
+  background: rgba(0,0,0,0.5);
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Hover text effect */
+.card1:hover h3 {
+  background: rgba(255, 165, 0, 0.8); /* change color on hover */
+}
+
+.card1:hover p {
+  background: rgba(0,0,0,0.7);
+}
+
+.card-link {
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* keep text color */
+}
+

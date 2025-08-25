@@ -30,14 +30,54 @@
     </div>
   </section>
 
-  <section class="intro">
+  <section class="services">
+    <div class="card1" onclick="window.location.href='services.html'">
+      <img src="public/home/cardio.jpg" alt="Cardio & Endurance">
+      <h3>Cardio & Endurance</h3>
+    </div>
+
+    <div class="card1" data-link="services.html">
+      <img src="public/home/functional.jpg" alt="Functional Training">
+      <h3>Functional Training</h3>
+    </div>
+
+    <div class="card1" data-link="services.html">
+      <img src="public/home/weight.jpg" alt="Weight Lifting">
+      <h3>Weight Lifting</h3>
+    </div>
+
+    <div class="card1" data-link="services.html">
+      <img src="public/home/yoga.jpg" alt="Yoga Training">
+      <h3>Yoga Training</h3>
+    </div>
+
+    <div class="card1" data-link="services.html">
+      <img src="public/home/diet.jpg" alt="Nutrition Training">
+      <h3>Nutrition Guidance</h3>
+    </div>
+
+    <div class="card1" data-link="services.html">
+      <img src="public/home/personal.jpg" alt="Personal Training">
+      <h3>Personal Training</h3>
+    </div>
+  </section>
+
+  <!-- <section class="intro">
     <h2>Welcome to Bodycraft Fitness</h2>
     <p>At Bodycraft Fitness, we help you achieve your health and fitness goals with expert trainers, modern facilities, and a community that motivates you every step of the way.</p>
     <a href="about.html" class="btn">Learn More</a>
-  </section>
+  </section> -->
 
   <footer>
     <p>&copy; 2025 Bodycraft Fitness | All Rights Reserved</p>
   </footer>
+
+  <script>
+    document.querySelectorAll(".card1").forEach(card => {
+      card.addEventListener("click", () => {
+        window.location.href = card.dataset.link;
+      });
+    });
+  </script>
 </body>
 </html>
