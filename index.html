@@ -7,24 +7,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <!-- <a href="index.html" class="logo">
-      <img src="public/logo.png" alt="Bodycraft Fitness Logo">
-    </a> -->
-    <a href="index.html" style="text-decoration: none;">
-      <h1>Bodycraft Fitness</h1>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <!-- Header will load here -->
+  <div id="header"></div>
 
   <section class="hero">
     <div>
@@ -70,22 +55,19 @@
     </div>
   </section>
 
-  <footer>
-    <div class="footer-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <p>&copy; 2025 Bodycraft Fitness | All Rights Reserved</p>
-  </footer>
+  <!-- Footer will load here -->
+  <div id="footer"></div>
 
   <script>
+    // Load header and footer
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+
     document.querySelectorAll(".card1").forEach(card => {
       card.addEventListener("click", () => {
         window.location.href = card.dataset.link;
